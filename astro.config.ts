@@ -12,7 +12,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://erfan.ee',
   output: 'hybrid',
-  adapter: cloudflare(),
+  adapter: cloudflare({}),
   markdown: {
     syntaxHighlight: false,
     rehypePlugins: [
