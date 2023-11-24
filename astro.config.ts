@@ -1,7 +1,6 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel/serverless';
 import robotsTxt from 'astro-robots-txt';
 import { defineConfig } from 'astro/config';
 import { toString } from 'mdast-util-to-string';
