@@ -1,0 +1,20 @@
+---
+import { Github, Linkedin, Send } from 'lucide-astro';
+
+import Clipboard from './ui/clipboard.astro';
+import Link from './ui/link.astro';
+---
+
+<div class="flex gap-4 items-center">
+  <Link href={import.meta.env.GITHUB}><Github size={12} />Github</Link>
+  <Link href={import.meta.env.TELEGRAM}><Send size={12} />Telegram</Link>
+  <Link href={import.meta.env.LINKEDIN}><Linkedin size={12} />LinkedIn</Link>
+    <Clipboard
+      aria-label="Copy Email"
+      content={import.meta.env.EMAIL}
+      class="w-full hidden sm:flex justify-between"
+    >
+      Copy Email
+    </Clipboard>
+  
+</div>

@@ -1,0 +1,170 @@
+---
+// import PostCard from '@/components/post-card.astro';
+import ExperienceCard, { type Experience } from '@/components/experience-card.astro';
+import ProjectCard from '@/components/project-card.astro';
+import Link from '@/components/ui/link.astro';
+import Separator from '@/components/ui/separator.astro';
+import Layout from '@/layouts/layout.astro';
+// import { getCollection } from 'astro:content';
+// import { ArrowRight } from 'lucide-astro';
+
+const projects = ['iconsax-react', 'clocks-newpage', 'swr-devtools', 'amoled-black', 'Iran-Proxy'];
+const experiences: Experience[] = [
+  {
+    company: 'Only1',
+    role: 'Senior Front End Engineer',
+    description:
+      'As a front-end developer at Only1, I contributed to building a Web3 social platform where creators can earn from their content. I played a key role in launching the NFT pass feature, enabling creators to post exclusive content for their fans. I utilized Next.js and Tailwind CSS to create a seamless and visually appealing user experience. Moreover, we integrated the Solana blockchain to ensure secure transactions for our users. It was a rewarding experience to be part of a team that empowers creators and embraces blockchain technology.As a front-end developer at Only1, I contributed to building a Web3 social platform where creators can earn from their content. I played a key role in launching the NFT pass feature, enabling creators to post exclusive content for their fans. I utilized Next.js and Tailwind CSS to create a seamless and visually appealing user experience. Moreover, we integrated the Solana blockchain to ensure secure transactions for our users. It was a rewarding experience to be part of a team that empowers creators and embraces blockchain technology.',
+    started: 'Dec 2022',
+    ended: 'Nov 2023',
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind',
+      'shadcn/ui',
+      'Node.js',
+      'PostgresQL',
+      'Solana',
+      'Web3Auth',
+      'Vercel',
+    ],
+  },
+  {
+    company: 'Liziera de Lac',
+    role: 'React Native Developer',
+    description: `The React Native app I developed oers a wide range of features to enhance the living experience for residents in a housing complex. Users can track the construction progress of their own house, grant access to their car within the complex, and reserve sports fields for recreational activities. The app also facilitates neighborly communication through a chat feature.
+       Additionally, residents can check the air quality in the vicinity and locate nearby public transport options for easy commuting. Furthermore, our future plans include integrating a payment feature, allowing users to conveniently make utility payments with just a simple click. This all-in-one application aims to simplify and improve daily life for residents, providing a seamless and connected experience within the community. </br>
+       <a class="text-slate-400" href="https://play.google.com/store/apps/details?id=ro.lizieradelac">play.google.com/store/apps/details?id=ro.lizieradelac</a>
+       `,
+    started: 'Jun 2022',
+    ended: 'Dec 2022',
+    tags: [
+      'React Native',
+      'TypeScript',
+      'Google Map',
+      'Swagger',
+      'Node.js',
+      'JWT Auth',
+      'UI Kitten',
+    ],
+  },
+  {
+    company: 'ChainGain.io',
+    role: 'Full Stack JavaScript Engineer | Web3 Ethereum',
+    description: `I spearheaded the creation of a cutting-edge WEB3 application using React.js and ethers.js. The app boasts decentralized communication with smart contracts, ensuring enhanced security and transparency.
+         Leveraging Material-UI, context API, and REST API, I ensured a seamless user experience across devices with a responsive design.
+        </br> While working here, I became interested in creating smart contracts using Solidity. I successfully developed my first real-world smart contract for distributing tokens, which was a significant achievement for me and the company.`,
+    started: 'Jun 2022',
+    ended: 'Dec 2022',
+    tags: [
+      'React.js',
+      'TypeScript',
+      'Solidity',
+      'Jest',
+      'React Testing Library',
+      'web3.js',
+      'ethers.js',
+      'MaterialUI',
+      'Amazon Web Services (AWS)',
+      'MySQL',
+    ],
+  },
+  {
+    company: 'Nodemon',
+    role: 'Soware Engineer | React.js Front-End Web | Mobile React Native',
+    description: `
+    In my role, I designed and implemented user interfaces, integrated APIs, and optimized application performance for both web and mobile platforms using React and React Native technologies. I also collaborated with a team to deliver high-quality and user-friendly applications to meet our clients' needs.`,
+    started: 'Mar 2020',
+    ended: 'Jan 2022',
+    tags: [
+      'React.js',
+      'TypeScript',
+      'React Native',
+      'Jest',
+      'React Testing Library',
+      'Cypress',
+      'AntD',
+      'MaterialUI',
+      'Node.js',
+      'MySQL',
+    ],
+  }
+];
+// const posts = (await getCollection('posts'))
+//   .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf())
+//   .slice(0, 3);
+---
+
+<Layout>
+  <div class="mx-auto mt-fluid-5 flex max-w-lg flex-col gap-10 lg:max-w-screen-lg">
+    <section class="flex items-center gap-24">
+      <div class="flex w-full flex-col justify-between lg:flex-row">
+        <div>
+          <h1 class="text-3xl font-bold tracking-widest">ERFAN KHADIVAR</h1>
+          <p class="font-alagard text-xl tracking-wider text-2">FullStack JavaScript Engineer</p>
+          <Separator class="my-3" />
+          <p class="mb-8 max-w-prose text-xs text-2">
+            Solid eight years of programming experience, including four years dedicated to web
+            development, I'm deeply passionate about harnessing technology to create stunning and
+            functional projects.
+          </p>
+          <p class="mb-8 max-w-prose text-xs text-2">
+            I'm eagerly looking forward to the opportunity to contribute my skills and, just as
+            importantly, learn from others on this ever-evolving path of innovation. <a
+              class="text-slate-400"
+              href={`mailto:${import.meta.env.EMAIL}`}>{import.meta.env.EMAIL}</a
+            >
+          </p>
+        </div>
+        <ul class="flex flex-col gap-2 text-xxs">
+          <li class="flex items-center justify-between gap-2 px-2">
+            <span class="text-2">Age:</span><span>Twenty Two</span>
+          </li>
+          <Separator />
+          <li class="flex items-center justify-between gap-2 px-2">
+            <span class="text-2">Location:</span><span>Tallinn, Harjumaa, Estonia</span>
+          </li>
+          <Separator />
+          <li class="flex items-center justify-between gap-2 px-2">
+            <span class="text-2">Occupation:</span>
+            <Link>@{import.meta.env.JOB}</Link>
+          </li>
+          <Separator />
+          <li class="flex items-center justify-between gap-2 px-2">
+            <span class="text-2">Education:</span>
+            <Link href={import.meta.env.COLLEGE}>@Esfrayen University</Link>
+          </li>
+          <Separator class="hidden lg:block" />
+        </ul>
+      </div>
+    </section>
+    <Separator />
+    <section class="flex flex-col gap-6">
+      <h2 class="font-alagard font-bold leading-none tracking-wider text-2">
+        PROFESSIONAL EXPERIENCE
+      </h2>
+      <!-- prettier-ignore -->
+      <ul class="flex flex-col gap-6">
+        {experiences.map((experience) => (<li><ExperienceCard experience={experience} /></li>))}
+      </ul>
+    </section>
+    <Separator />
+    <section class="flex flex-col gap-6">
+      <h2 class="font-alagard font-bold leading-none tracking-wider text-2">PROJECTS</h2>
+      <!-- prettier-ignore -->
+      <ul class="grid lg:grid-cols-2 gap-x-10 gap-y-6">
+        {projects.map((project) => (<li><ProjectCard {project} /></li>))}
+      </ul>
+    </section>
+    <!-- <Separator />
+    <section class="flex flex-col gap-6">
+      <h2 class="font-bold leading-none tracking-wider text-2 font-alagard">RECENT POSTS</h2>
+      <ul class="gap-10 grid lg:grid-cols-3">
+        {posts.map((post) => (<li><PostCard {post} /></li>))}
+      </ul>
+      <Link href="/blog" class="mt-2 self-end text-xs text-2">
+        View All Posts <ArrowRight size={14} aria-hidden />
+      </Link>
+    </section> -->
+  </div>
+</Layout>

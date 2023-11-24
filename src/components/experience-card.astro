@@ -1,0 +1,31 @@
+---
+import { Building2 } from 'lucide-astro';
+
+export type Experience = {
+  company: string;
+  role: string;
+  description: string;
+  started: string;
+  ended: string;
+  tags: string[];
+};
+
+type Props = { experience: Experience };
+
+const { company, role, description, started, ended, tags } = Astro.props.experience;
+---
+
+<div class="h-full border-l pl-2">
+  <div class="text-xxs">{started}{' - '}{ended}</div>
+  <div class="text-sm">{role}</div>
+  <div class="flex items-center gap-2 text-xs">
+    <Building2 class="shrink-0 text-2" size={12} aria-hidden />
+    <span>{company}</span>
+  </div>
+  <div class="flex flex-col gap-3 text-2">
+    <p class="text-xs text-2" set:html={description} />
+    <div class="flex flex-wrap items-center gap-2 text-xxs">
+      {tags.map((tag) => <span class="rounded-sm border bg-3 px-1">{tag}</span>)}
+    </div>
+  </div>
+</div>
