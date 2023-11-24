@@ -7,7 +7,7 @@ export const GET: APIRoute = async () => {
 
   return rss({
     title: 'Blog | Erfan Khadivar',
-    description: 'My digital space.',
+    description: 'FullStack JavaScript Engineer',
     site: import.meta.env.SITE,
     items: posts.map((post) => ({
       link: `blog/${post.slug}`,

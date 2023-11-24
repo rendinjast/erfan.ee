@@ -1,5 +1,5 @@
 {
-  "name": "@penrodlol/christianpenrod",
+  "name": "erfan.ee",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -13,15 +13,14 @@
   "dependencies": {
     "@astrojs/cloudflare": "^7.7.1",
     "@planetscale/database": "^1.11.0",
-    "astro": "^3.3.3",
+    "astro": "^3.6.0",
     "pagefind": "^1.0.3"
   },
   "devDependencies": {
     "@astrojs/mdx": "^1.1.2",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.2",
+    "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.2",
-    "@fontsource/inter": "^5.0.15",
     "@octokit/rest": "^20.0.2",
     "astro-og-canvas": "^0.2.1",
     "astro-robots-txt": "^1.0.0",
